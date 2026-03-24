@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-chat-bg: #343541;
+  --color-chat-input: #40414f;
+  --color-chat-sidebar: #202123;
+  --color-chat-hover: #2a2b32;
+  --color-chat-border: #4e4f60;
+  --color-chat-cat-msg: #444654;
+  --color-chat-user-msg: #343541;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #343541;
+}
+
+/* Dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #565869;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Blinking cursor for streaming */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.streaming-cursor::after {
+  content: '▋';
+  display: inline-block;
+  margin-left: 1px;
+  animation: blink 0.8s step-end infinite;
+  color: #acacbe;
+}
